@@ -17,7 +17,7 @@ import { cartActions } from '@/store/slices/buyer/cart.slice';
 import { useDispatch } from '@/hooks/useDispatch';
 import { useSelector } from '@/hooks/useSelector';
 import Preloader from '@/components/ui/Preloader/preloader';
-import { SellerNotification } from '@/components/shared/SellerNotification';
+import SellerNotification from '@/components/shared/SellerNotification/SellerNotification';
 
 interface ProductData {
   amount: number;
