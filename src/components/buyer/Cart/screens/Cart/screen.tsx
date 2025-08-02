@@ -62,6 +62,14 @@ export function CartScreen({ onSubmit, onBack }: CartScreenProps) {
   // Товары в корзине
   const [products, setProducts] = useState<ProductData[]>([]);
 
+  // Функция для безопасного получения значения amount
+  const getAmountValue = (amount: number | AmountObject | undefined): number => {
+    if (amount === undefined) return 0;
+    if (typeof amount === 'number') return amount;
+    if (amount && 'amount__sum' in amount) return amount.amount__sum;
+    return 0;
+  };
+
   // локальная корзина
   const dispatch = useDispatch();
   const localCart = useSelector((cart) => cart.buyerCart);
@@ -242,7 +250,7 @@ export function CartScreen({ onSubmit, onBack }: CartScreenProps) {
                           <Counter
                             className={styles['product__counter']}
                             product={index}
-                            max={index.amount || 0}
+                            max={getAmountValue(index.amount)}
                           />
                         </div>
                       </td>
