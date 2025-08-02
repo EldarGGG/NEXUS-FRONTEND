@@ -28,7 +28,7 @@ interface ProductData {
   id: number;
   name: string;
   preview: string;
-  amount: number;
+  amount: number | { amount__sum: number };
   subcategory: {
     name: string;
     store: string;
@@ -201,7 +201,13 @@ const ProductPage = () => {
                 <p>Товара в наличии {typeof productData.amount === 'object' ? productData.amount?.amount__sum || 0 : productData.amount || 0}</p>
               </div>
               {productInBasket ? (
-                <Counter product={productData} max={typeof productData.amount === 'object' ? productData.amount?.amount__sum || 0 : productData.amount || 0} />
+                <Counter 
+                  product={{
+                    ...productData,
+                    amount: typeof productData.amount === 'object' ? productData.amount.amount__sum : productData.amount
+                  }} 
+                  max={typeof productData.amount === 'object' ? productData.amount.amount__sum : productData.amount} 
+                />
               ) : (
                 <button
                   onClick={() => handleSaveToCart()}
