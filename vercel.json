@@ -5,11 +5,11 @@
   "installCommand": "npm install",
   "devCommand": "npm run dev",
   "env": {
-    "NEXT_PUBLIC_API_BASE_URL": "@api_base_url"
+    "NEXT_PUBLIC_API_BASE_URL": "https://nexus-backend-z66y.onrender.com"
   },
   "build": {
     "env": {
-      "NEXT_PUBLIC_API_BASE_URL": "@api_base_url"
+      "NEXT_PUBLIC_API_BASE_URL": "https://nexus-backend-z66y.onrender.com"
     }
   },
   "functions": {
