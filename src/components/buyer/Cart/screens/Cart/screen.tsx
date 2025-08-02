@@ -24,8 +24,12 @@ import { useEffect, useState } from 'react';
 import Preloader from '@/components/ui/Preloader/preloader';
 
 
+interface AmountObject {
+  amount__sum: number;
+}
+
 interface ProductData {
-  amount: number;
+  amount: number | AmountObject;
   price?: number; // Цена товара
   id: number;
   weight: string;
@@ -115,9 +119,28 @@ export function CartScreen({ onSubmit, onBack }: CartScreenProps) {
   }
 
   useEffect(() => {
-    setProducts(localCart)
-    getCartSize()
-    getCartTotal() // Рассчитываем общую стоимость при изменении корзины
+    // Преобразуем данные из корзины в формат ProductData
+    const formattedProducts = localCart.map(item => ({
+      id: item.id,
+      name: item.name,
+      preview: item.preview || item.image || '',
+      amount: item.amount || 0,
+      price: item.price ? parseFloat(item.price) : 0,
+      weight: item.weight || '',
+      counter: item.counter || 1,
+      methods: item.methods || [],
+      subcategory: item.subcategory || {
+        id: 0,
+        name: '',
+        store: 0,
+        category: { id: 0, name: '' }
+      },
+      uom: { name: 'шт' }
+    }));
+    
+    setProducts(formattedProducts);
+    getCartSize();
+    getCartTotal(); // Рассчитываем общую стоимость при изменении корзины
   }, [localCart])
 
 
@@ -219,7 +242,7 @@ export function CartScreen({ onSubmit, onBack }: CartScreenProps) {
                           <Counter
                             className={styles['product__counter']}
                             product={index}
-                            max={typeof index.amount === 'object' ? index.amount?.amount__sum || 0 : index.amount || 0}
+                            max={index.amount || 0}
                           />
                         </div>
                       </td>

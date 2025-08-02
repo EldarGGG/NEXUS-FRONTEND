@@ -45,9 +45,17 @@ export function Counter({ defaultCount, className, max, product }: CounterProps)
     }
   }, [product.id, localCart]);
 
+  // Функция для безопасного получения значения amount
+  const getAmountValue = (amount: number | { amount__sum: number } | undefined): number => {
+    if (amount === undefined) return 0;
+    if (typeof amount === 'number') return amount;
+    if (amount && 'amount__sum' in amount) return amount.amount__sum;
+    return 0;
+  };
+
   // Обновление максимального количества
   useEffect(() => {
-    setInStock(max || 0);
+    setInStock(max !== undefined ? max : getAmountValue(product.amount));
   }, [max]);
 
   // Увеличение счетчика товара на +
@@ -145,11 +153,12 @@ export function Counter({ defaultCount, className, max, product }: CounterProps)
   };
 
   const saveToLocalCart = (product: any, counter: number) => {
+    const price = product.price || getAmountValue(product.amount); // Сохраняем цену товара
     dispatch(
       cartActions.addToCart({
         id: product.id,
         amount: max,
-        price: product.price || (typeof product.amount === 'object' ? product.amount?.amount__sum || 0 : product.amount || 0), // Сохраняем цену товара
+        price: price,
         name: product.name,
         counter: counter,
         image: product.preview,

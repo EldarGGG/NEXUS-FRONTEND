@@ -14,7 +14,7 @@ export interface CounterProps {
     id: number;
     name: string;
     preview: string;
-    amount: number;
+    amount: number | AmountObject;
     price?: number; // Цена товара
     subcategory: {
       id: any;
@@ -27,8 +27,12 @@ export interface CounterProps {
   };
 }
 
+export interface AmountObject {
+  amount__sum: number;
+}
+
 export interface Product {
-  amount: number;
+  amount: number | AmountObject;
   price?: number; // Цена товара
   id: number;
   name: string;
