@@ -1,0 +1,520 @@
+@import '/src/assets/styles/index.scss';
+
+.main {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr;
+  grid-template-rows: auto;
+  column-gap: 1.25rem;
+
+  height: calc(100% - 5.5rem);
+}
+
+.information {
+  height: 100%;
+  overflow: auto;
+
+  border-radius: 0.75rem;
+  background: $gray-900;
+
+  &__header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: $gray-900;
+
+    padding: 1.25rem 1.25rem 1rem 1.25rem;
+
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1.25rem 1fr auto;
+    column-gap: 1rem;
+
+    border-bottom: 1px solid $gray-800;
+
+    &-button {
+      width: fit-content;
+      height: fit-content;
+
+      svg {
+        width: 1.25rem;
+        height: 1.25rem;
+        flex-shrink: 0;
+      }
+    }
+
+    &-title {
+      @include textSemibold20;
+      color: $gray-100;
+    }
+  }
+
+  &__nav {
+    position: sticky;
+    top: 4.375rem;
+    z-index: 10;
+    background: $gray-900;
+
+    padding: 1rem 1.25rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 1rem;
+
+    border-bottom: 1px solid $gray-800;
+
+    &-link {
+      display: flex;
+      align-items: center;
+      column-gap: 0.375rem;
+
+      padding-bottom: 0.25rem;
+      border-bottom: 1px solid $gray-900;
+
+      span {
+        @include textMedium12;
+        color: $gray-100;
+      }
+
+      svg {
+        width: 0.625rem;
+        height: 0.625rem;
+        flex-shrink: 0;
+
+        margin-bottom: 0.25rem;
+      }
+
+      &.active {
+        border-color: $primary-500;
+
+        span {
+          color: $primary-500;
+        }
+      }
+    }
+  }
+
+  &__order {
+    border-bottom: 1px solid $gray-800;
+
+    table {
+      border-spacing: 1.25rem;
+
+      tr {
+        td {
+          &:first-child {
+            display: flex;
+            align-items: center;
+            column-gap: 0.625rem;
+
+            svg {
+              width: 0.75rem;
+              height: 0.75rem;
+              flex-shrink: 0;
+
+              margin-bottom: 0.25rem;
+
+              color: $gray-600;
+            }
+
+            span {
+              @include textRegular12;
+              color: $gray-600;
+            }
+          }
+
+          &:last-child {
+            span {
+              margin-left: 0.25rem;
+            }
+
+            span,
+            select {
+              @include textMedium12;
+              color: $gray-100;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__company {
+    &-user {
+      padding: 1rem 1.25rem 0 1.25rem;
+
+      display: flex;
+      align-items: center;
+      column-gap: 0.375rem;
+
+      div {
+        position: relative;
+
+        width: 2.5rem;
+        height: 2.5rem;
+        flex-shrink: 0;
+
+        img {
+          // Image
+          &:first-child {
+            width: inherit;
+            height: inherit;
+            flex-shrink: inherit;
+            border-radius: 999px;
+          }
+
+          // Icon
+          &:last-child {
+            position: absolute;
+            left: -0.25rem;
+            bottom: -0.25rem;
+          }
+        }
+      }
+
+      p {
+        @include textMedium12;
+        color: $gray-100;
+      }
+    }
+
+    table {
+      border-spacing: 1.25rem;
+
+      tr {
+        td {
+          &:first-child {
+            display: flex;
+            align-items: center;
+            column-gap: 0.625rem;
+
+            svg {
+              width: 0.75rem;
+              height: 0.75rem;
+              flex-shrink: 0;
+
+              margin-bottom: 0.25rem;
+
+              color: $gray-600;
+            }
+
+            span {
+              @include textRegular12;
+              color: $gray-600;
+            }
+          }
+
+          &:last-child {
+            span {
+              margin-left: 0.25rem;
+            }
+
+            span,
+            select {
+              @include textMedium12;
+              color: $gray-100;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.chat {
+  height: 100%;
+  overflow: auto;
+
+  border-radius: 0.75rem;
+  background: $gray-900;
+}
+
+.chat-header {
+  margin: 1.25rem 1.25rem 0 1.25rem;
+  padding: 0.75rem 1.25rem;
+
+  border-radius: 0.25rem;
+  border: 1px solid $primary-700;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 0.75rem;
+
+  &__title {
+    @include textRegular12;
+    color: $gray-100;
+  }
+
+  &__date {
+    @include textLight10;
+    color: $gray-100;
+  }
+}
+
+.chat-messages {
+  margin-top: 1.5rem;
+  padding-inline: 1.25rem;
+
+  display: flex;
+  flex-flow: column;
+  row-gap: 1.5rem;
+
+  &__message {
+    display: flex;
+    align-items: flex-start;
+    column-gap: 1.25rem;
+
+    &.my {
+      flex-flow: row-reverse;
+
+      .message {
+        background: #272e37;
+        width: calc(100% - 9rem);
+        border-radius: 0.75rem 0.25rem 0.75rem 0.75rem;
+      }
+    }
+
+    .user {
+      position: relative;
+
+      width: 2.25rem;
+      height: 2.25rem;
+      flex-shrink: 0;
+
+      img {
+        // Image
+        &:first-child {
+          width: inherit;
+          height: inherit;
+          flex-shrink: inherit;
+          border-radius: 999px;
+        }
+
+        // Icon
+        &:last-child {
+          position: absolute;
+          left: -0.25rem;
+          bottom: -0.25rem;
+        }
+      }
+    }
+
+    .message {
+      width: calc(100% - 7rem);
+
+      border-radius: 0.25rem 1rem 1rem 0.375rem;
+      background: $gray-800;
+
+      padding: 0.75rem;
+
+      &__text {
+        @include textRegular12;
+        color: $gray-100;
+      }
+
+      &__date {
+        @include textLight10;
+        color: $gray-100;
+        float: right;
+      }
+    }
+  }
+}
+
+.chat-order {
+  border-radius: 0.25rem;
+  border: 1px solid $primary-700;
+
+  margin: 1.5rem 1.25rem 0 1.25rem;
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 1rem 1.25rem;
+
+    border-bottom: 1px solid $gray-800;
+
+    &__title {
+      @include textMedium14;
+      color: $gray-100;
+    }
+
+    &__date {
+      @include textLight10;
+      color: $gray-100;
+    }
+  }
+
+  .table {
+    border-collapse: collapse;
+    width: 100%;
+    border-bottom: 1px solid $gray-800;
+
+    thead {
+      border-bottom: 1px solid $gray-700;
+
+      tr th {
+        padding: 0.75rem 1.25rem;
+        text-align: start;
+
+        p {
+          @include textMedium12;
+          color: $gray-600;
+        }
+      }
+    }
+
+    tbody {
+      tr td {
+        padding: 0.75rem 1.25rem;
+
+        p {
+          @include textMedium12;
+          color: $gray-100;
+        }
+
+        div {
+          display: grid;
+          grid-template-columns: 2rem 1fr;
+          grid-template-rows: repeat(2, 1fr);
+          column-gap: 0.625rem;
+          align-items: center;
+
+          img {
+            grid-area: 1 / 1 / 3 / 2;
+
+            width: 2rem;
+            height: 2rem;
+            flex-shrink: 0;
+          }
+
+          p {
+            &:first-child {
+              @include textSemibold14;
+              color: $gray-100;
+
+              grid-area: 1 / 2 / 2 / 3;
+            }
+
+            &:last-child {
+              @include textLight10;
+              color: $gray-200;
+
+              grid-area: 2 / 2 / 3 / 3;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .footer {
+    padding: 1rem 1.25rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    column-gap: 1.5rem;
+
+    &__item {
+      display: flex;
+      align-items: center;
+      column-gap: 0.75rem;
+
+      p {
+        @include textRegular12;
+      }
+
+      span {
+        @include textMedium12;
+      }
+
+      &:nth-child(1),
+      &:nth-child(2) {
+        p,
+        span {
+          color: $gray-100;
+        }
+      }
+
+      &:nth-child(3),
+      &:nth-child(4) {
+        p,
+        span {
+          color: $gray-600;
+        }
+      }
+    }
+  }
+}
+
+.chat-message-bar {
+  position: sticky;
+  bottom: 0;
+  background: $gray-900;
+
+  margin-top: 1.5rem;
+  padding: 1.25rem;
+
+  border-top: 1px solid $gray-800;
+
+  display: flex;
+  align-items: center;
+  column-gap: 1.25rem;
+
+  &__other {
+    display: flex;
+    align-items: center;
+    column-gap: 0.625rem;
+
+    button {
+      padding: 0.5rem;
+
+      flex-shrink: 0;
+      width: 2rem;
+      height: 2rem;
+
+      svg {
+        width: 1rem;
+        height: 1rem;
+        flex-shrink: 0;
+      }
+    }
+  }
+
+  &__field {
+    @include textRegular14;
+    color: $gray-100;
+
+    width: 100%;
+
+    border-radius: 0.75rem;
+    background: $gray-800;
+
+    padding: 0.75rem 1.5rem;
+
+    &::placeholder {
+      color: $gray-600;
+    }
+  }
+
+  &__button {
+    height: 2.5rem;
+    width: 2.5rem;
+    flex-shrink: 0;
+
+    padding: 0.5rem;
+
+    border-radius: 0.375rem;
+    background: $gray-700;
+
+    svg {
+      width: 1.5rem;
+      height: 1.5rem;
+      flex-shrink: 0;
+    }
+  }
+}

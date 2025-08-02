@@ -1,0 +1,35 @@
+@import '/src/assets/styles/index.scss';
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__title {
+    color: $gray-100;
+    @include textSemibold20;
+
+    & > * {
+      color: $gray-100;
+      @include textSemibold20;
+    }
+  }
+
+  &-nav {
+    display: flex;
+    align-items: center;
+    column-gap: 1.25rem;
+
+    &__link {
+      @include textMedium14;
+
+      color: $gray-100;
+      padding-bottom: 0.375rem;
+
+      &.active {
+        color: $primary-500;
+        border-bottom: 1px solid $primary-500;
+      }
+    }
+  }
+}

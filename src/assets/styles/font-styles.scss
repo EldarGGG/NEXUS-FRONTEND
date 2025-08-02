@@ -1,0 +1,72 @@
+@mixin textSemibold52 {
+  font-weight: 600;
+  font-size: 3.25rem;
+  line-height: 64px; /* 123.077% */
+}
+
+@mixin textSemibold28 {
+  font-weight: 600;
+  font-size: 1.75rem;
+  line-height: 36px; /* 128.571% */
+}
+
+@mixin textSemibold20 {
+  font-weight: 600;
+  font-size: 1.25rem;
+  line-height: 27px; /* 135% */
+}
+
+@mixin textRegular18 {
+  font-weight: 400;
+  font-size: 1.125rem;
+  line-height: 24px; /* 133.333% */
+}
+
+@mixin textSemibold16 {
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 22px; /* 137.5% */
+}
+
+@mixin textSemibold14 {
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 19px; /* 135.714% */
+}
+
+@mixin textMedium14 {
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 19px; /* 135.714% */
+}
+
+@mixin textRegular14 {
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 19px; /* 135.714% */
+}
+
+@mixin textSemibold12 {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.75rem;
+  line-height: 17px; /* 141.667% */
+}
+
+@mixin textMedium12 {
+  font-weight: 500;
+  font-size: 0.75rem;
+  line-height: 17px; /* 141.667% */
+}
+
+@mixin textRegular12 {
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 17px; /* 141.667% */
+}
+
+@mixin textLight10 {
+  font-weight: 300;
+  font-size: 0.625rem;
+  line-height: normal;
+}

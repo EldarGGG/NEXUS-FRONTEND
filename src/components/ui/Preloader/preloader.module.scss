@@ -1,0 +1,99 @@
+@import '/src/assets/styles/index.scss';
+
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: calc(100vh - 15rem);
+}
+
+.loader {
+  position: relative;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation: load3 1.4s infinite linear;
+  animation: load3 1.4s infinite linear;
+  border-radius: 50%;
+  background: $gray-500;
+  background: -moz-linear-gradient(left, $gray-500 10%, rgba(255, 255, 255, 0) 42%);
+  background: -webkit-linear-gradient(left, $gray-500 10%, rgba(255, 255, 255, 0) 42%);
+  background: -o-linear-gradient(left, $gray-500 10%, rgba(255, 255, 255, 0) 42%);
+  background: -ms-linear-gradient(left, $gray-500 10%, rgba(255, 255, 255, 0) 42%);
+  background: linear-gradient(to right, $gray-500 10%, rgba(255, 255, 255, 0) 42%);
+  width: 11em;
+  height: 11em;
+  font-size: 10px;
+  text-indent: -9999em;
+}
+.loader:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 100% 0 0 0;
+  background: $gray-500;
+  width: 50%;
+  height: 50%;
+  content: '';
+}
+.loader:after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  border-radius: 50%;
+  background: $gray-1000;
+  width: 75%;
+  height: 75%;
+  content: '';
+}
+@-webkit-keyframes load3 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes load3 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 950px) {
+  .productPage {
+    flex-direction: column;
+    &__specification,
+    .specification {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .productPage {
+    &__slider-continaer,
+    .slider-container {
+      .slick-slider {
+        .slick-prev {
+          display: none !important;
+        }
+        .slick-next {
+          display: none !important;
+        }
+      }
+    }
+  }
+}

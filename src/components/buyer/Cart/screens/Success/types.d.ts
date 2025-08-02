@@ -1,0 +1,3 @@
+interface SuccessProps {
+  onClose: () => void;
+}

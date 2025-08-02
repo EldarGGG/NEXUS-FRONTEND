@@ -1,0 +1,80 @@
+@import '/src/assets/styles/index.scss';
+
+.theme-switch {
+  position: relative;
+
+  border-radius: 1000px;
+  background: $gray-700;
+
+  height: fit-content;
+
+  &__label {
+    display: flex;
+    column-gap: 0.25rem;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0.25rem;
+
+    @include mobile {
+      gap: 0;
+
+      padding-top: 0.125rem;
+      padding-bottom: 0.125rem;
+    }
+  }
+
+  &__circle {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) translateX(-0.875rem);
+
+    @include mobile {
+      transform: translateY(-50%) translateX(-0.75rem);
+    }
+
+    transition: 200ms ease;
+    border-radius: 1000px;
+
+    background: $gray-800;
+
+    width: 1.5rem;
+    height: 1.5rem;
+
+    @include mobile {
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+  }
+
+  input:checked ~ &__circle {
+    transform: translateY(-50%) translateX(0.875rem);
+    background: $gray-800;
+
+    @include mobile {
+      transform: translateY(-50%) translateX(0.75rem);
+    }
+  }
+
+  &__light,
+  &__dark {
+    display: grid;
+    place-items: center;
+    z-index: 1;
+
+    cursor: pointer;
+
+    width: 1.5rem;
+    height: 1.5rem;
+
+    svg {
+      width: 1.25rem;
+      height: 1.25rem;
+
+      @include mobile {
+        width: 1rem;
+        height: 1rem;
+      }
+    }
+  }
+}

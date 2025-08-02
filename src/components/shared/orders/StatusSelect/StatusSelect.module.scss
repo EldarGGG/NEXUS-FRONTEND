@@ -1,0 +1,117 @@
+@import '/src/assets/styles/index.scss';
+
+.status-select {
+  border-radius: 0.25rem;
+  background: $gray-900;
+
+  position: relative;
+
+  &.open {
+    background: $gray-800;
+    border-radius: 0.25rem 0.25rem 0 0;
+  }
+
+  &__selected {
+    padding: 0.5rem 0.625rem;
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+
+    user-select: none;
+
+    div {
+      background: $gray-100;
+      border-radius: 100px;
+
+      margin-bottom: 0.125rem;
+      width: 0.625rem;
+      height: 0.625rem;
+      flex-shrink: 0;
+    }
+
+    span {
+      @include textMedium12;
+
+      color: $gray-300;
+
+      width: 3.875rem;
+      text-align: start;
+    }
+
+    svg {
+      margin-left: auto;
+      margin-right: 0;
+
+      &.open {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &__options {
+    display: none;
+    height: 8.625rem;
+    overflow-y: auto;
+
+    position: absolute;
+    z-index: 100;
+
+    padding: 0.5rem 0.625rem;
+
+    flex-flow: column;
+    align-items: flex-start;
+    row-gap: 0.5rem;
+
+    &.open {
+      background: $gray-800;
+
+      display: flex;
+      width: 100%;
+
+      border-radius: 0 0 0.25rem 0.25rem;
+    }
+
+    .divider {
+      background: $gray-700;
+      height: 1px;
+      width: 100%;
+    }
+  }
+
+  &__option {
+    user-select: none;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+
+    opacity: 0.5;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    div {
+      background: attr(aria-color);
+      border-radius: 100px;
+
+      margin-bottom: 0.125rem;
+      width: 0.625rem;
+      height: 0.625rem;
+      flex-shrink: 0;
+    }
+
+    span {
+      @include textMedium12;
+
+      color: attr(aria-color);
+    }
+  }
+
+  &__divider {
+    background: $gray-700;
+    height: 1px;
+    width: 100%;
+  }
+}

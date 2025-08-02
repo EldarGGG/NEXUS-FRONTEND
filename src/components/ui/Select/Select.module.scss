@@ -1,0 +1,91 @@
+@import '/src/assets/styles/index.scss';
+
+.select {
+  position: relative;
+
+  border-radius: 100px;
+  background: $gray-800;
+
+  width: fit-content;
+
+  &.isOpen {
+    border-radius: 0.75rem 0.75rem 0 0;
+  }
+
+  &.isOpen & {
+    &__list {
+      display: flex;
+      flex-flow: column;
+
+      list-style: none;
+    }
+
+    &__main-button {
+      border-bottom-color: $gray-700;
+
+      svg {
+        transform: rotateX(180deg);
+      }
+    }
+  }
+
+  &__main-button,
+  &__button {
+    display: flex;
+    column-gap: 0.75rem;
+    justify-content: space-between;
+
+    width: inherit;
+
+    span {
+      color: $gray-100;
+      font-weight: 400;
+      font-size: 0.875rem;
+      line-height: 19px; /* 135.714% */
+
+      @include mobile {
+        font-size: 0.75rem;
+        line-height: 17px; /* 141.667% */
+      }
+    }
+  }
+
+  &__main-button {
+    border-bottom: 1px solid #00000000;
+    padding: 0.625rem 1.25rem;
+
+    @include mobile {
+      padding: 0.5rem 1.25rem;
+    }
+
+    svg {
+      flex-shrink: 0;
+      width: 1rem;
+      height: 1rem;
+
+      color: $gray-100;
+    }
+  }
+
+  &__button {
+    padding: 0.3125rem 1.25rem;
+
+    width: 100%;
+  }
+
+  &__list {
+    display: none;
+
+    position: absolute;
+    left: 0;
+    flex-flow: column;
+    z-index: 50;
+
+    border-radius: 0 0 0.75rem 0.75rem;
+    background: inherit;
+
+    padding-top: 0.3125rem;
+    padding-bottom: 0.3125rem;
+    width: 100%;
+  }
+}

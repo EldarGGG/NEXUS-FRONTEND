@@ -1,0 +1,389 @@
+@import '/src/assets/styles/index.scss';
+
+// Mobile
+.mobile {
+  display: none;
+  flex-flow: column;
+  height: 100%;
+
+  @include mobile {
+    display: flex;
+  }
+}
+
+.header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  column-gap: 1rem;
+
+  grid-area: 1 / 1 / 2 / 3;
+  align-items: center;
+
+  border-bottom: 1px solid $gray-800;
+  padding: 1.875rem 2rem;
+
+  @include mobile {
+    column-gap: 0.75rem;
+    padding: 1rem 1.25rem;
+  }
+
+  &__back-button {
+    display: grid;
+    place-items: center;
+
+    svg {
+      flex-shrink: 0;
+      width: 1.5rem;
+      height: 1.5rem;
+      color: #7d8fa9;
+
+      @include mobile {
+        width: 1.25rem;
+        height: 1.25rem;
+      }
+    }
+  }
+
+  &__title {
+    color: $gray-100;
+    font-weight: 600;
+    font-size: 1.75rem;
+    line-height: 36px; /* 128.571% */
+
+    @include mobile {
+      font-size: 1.125rem;
+      line-height: 24px; /* 133.333% */
+    }
+  }
+
+  &__select-button {
+    display: none;
+
+    @include mobile {
+      display: block;
+
+      color: $primary-700;
+      font-weight: 500;
+      font-size: 0.75rem;
+      line-height: 17px; /* 141.667% */
+    }
+  }
+}
+
+.cart-screen {
+  display: flex;
+  row-gap: 1.25rem;
+  flex-flow: column;
+
+  padding: 1.25rem;
+  height: 100%;
+  overflow-y: auto;
+
+  &__button {
+    display: flex;
+    column-gap: 0.75rem;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid $primary-700;
+    border-radius: 0.75rem;
+    padding: 0.625rem 1.5rem;
+
+    svg {
+      flex-shrink: 0;
+      width: 0.875rem;
+      height: 0.875rem;
+    }
+
+    span {
+      color: $gray-100;
+      font-weight: 600;
+      font-size: 0.75rem;
+      line-height: 17px; /* 141.667% */
+    }
+  }
+
+  &__button {
+    display: flex;
+    row-gap: 0.125rem;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+
+    margin: 1.25rem 1.25rem 2rem 1.25rem;
+
+    border-radius: 0.75rem;
+    background: $primary-700;
+    padding: 0.625rem 1.5rem;
+
+    width: calc(100% - 2.5rem);
+
+    span {
+      color: $gray-100;
+
+      &:nth-child(1) {
+        font-weight: 600;
+        font-size: 0.875rem;
+        line-height: 19px; /* 135.714% */
+      }
+
+      &:nth-child(2) {
+        font-weight: 500;
+        font-size: 0.75rem;
+        line-height: 17px; /* 141.667% */
+      }
+    }
+  }
+}
+
+// Desktop
+.desktop {
+  display: grid;
+  grid-template-rows: repeat(3, auto);
+  grid-template-columns: 1fr 0.4fr;
+
+  height: 100%;
+
+  @include mobile {
+    display: none;
+  }
+}
+
+.actions {
+  display: flex;
+  column-gap: 2.5rem;
+  grid-area: 2 / 1 / 3 / 3;
+  align-items: center;
+
+  border-bottom: 1px solid $gray-800;
+  padding: 0.75rem 2rem;
+
+  &__select {
+    display: flex;
+    column-gap: 1.25rem;
+
+    input {
+      flex-shrink: 0;
+
+      width: 1rem;
+      height: 1rem;
+
+      accent-color: $gray-700;
+    }
+
+    label {
+      cursor: pointer;
+
+      color: $gray-100;
+      font-weight: 500;
+      font-size: 0.875rem;
+      line-height: 19px; /* 135.714% */
+
+      user-select: none;
+    }
+  }
+
+  &__delete {
+    display: flex;
+    column-gap: 0.625rem;
+
+    svg {
+      width: 1rem;
+      height: 1rem;
+      color: $danger-600;
+    }
+
+    span {
+      color: $danger-600;
+      font-weight: 500;
+      font-size: 0.75rem;
+      line-height: 17px; /* 141.667% */
+    }
+  }
+}
+
+.table-wrapper {
+  grid-area: 3 / 1 / 4 / 2;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+
+  &__row {
+    border-bottom: 1px solid $gray-800;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+  &__data {
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+
+    &:first-child {
+      padding-left: 2rem;
+    }
+
+    &:last-child {
+      padding-right: 2rem;
+      width: 1%;
+    }
+  }
+}
+
+.product {
+  display: flex;
+  column-gap: 0.625rem;
+  align-items: center;
+
+  width: fit-content;
+
+  &__checkbox {
+    width: 1rem;
+    height: 1rem;
+
+    accent-color: $gray-700;
+  }
+  &__image {
+    flex-shrink: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  &__title {
+    color: $gray-100;
+    font-weight: 600;
+    font-size: 0.875rem;
+    line-height: 19px; /* 135.714% */
+  }
+
+  &__name {
+    color: $gray-100;
+    font-weight: 500;
+    font-size: 0.875rem;
+    line-height: 19px; /* 135.714% */
+  }
+
+  &__delete-action {
+    display: flex;
+    column-gap: 0.625rem;
+
+    svg {
+      width: 1rem;
+      height: 1rem;
+    }
+
+    span {
+      color: $danger-400;
+      font-weight: 500;
+      font-size: 0.75rem;
+      line-height: 17px; /* 141.667% */
+    }
+  }
+}
+
+// Result
+.result {
+  grid-area: 3 / 2 / 4 / 3;
+  border-left: 1px solid $gray-800;
+  padding: 1.25rem 2rem 1.25rem 1.25rem;
+
+  height: 100%;
+  overflow-y: auto;
+}
+
+.result-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__title {
+    color: $gray-100;
+    font-weight: 600;
+    font-size: 1.25rem;
+    line-height: 27px; /* 135% */
+  }
+
+  &__result {
+    color: $gray-600;
+    font-weight: 400;
+    font-size: 0.75rem;
+    line-height: 17px; /* 141.667% */
+  }
+}
+
+.result-main {
+  display: flex;
+  flex-flow: column;
+
+  &__list {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    list-style: none;
+
+    &:nth-child(1) {
+      border-bottom: 1px solid $gray-800;
+    }
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    span {
+      color: $gray-100;
+
+      &:nth-child(1) {
+        font-weight: 400;
+        font-size: 0.875rem;
+        line-height: 19px; /* 135.714% */
+      }
+
+      &:nth-child(2) {
+        font-weight: 500;
+        font-size: 0.75rem;
+        line-height: 17px; /* 141.667% */
+      }
+    }
+  }
+
+  &__button {
+    display: flex;
+    column-gap: 0.75rem;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 0.25rem;
+
+    border-radius: 0.75rem;
+    background: $primary-700;
+    padding: 0.75rem 1.5rem;
+
+    span {
+      color: $gray-100;
+      font-weight: 600;
+      font-size: 0.875rem;
+      line-height: 19px; /* 135.714% */
+    }
+
+    svg {
+      width: 1.375rem;
+      height: 1.375rem;
+    }
+  }
+
+  &__banner {
+    margin-top: 1.25rem;
+
+    border-radius: 0.75rem;
+    background: $gray-800;
+
+    aspect-ratio: 4 / 4;
+    width: 100%;
+    height: 100%;
+  }
+}

@@ -1,0 +1,376 @@
+@import '/src/assets/styles/index.scss';
+
+.main {
+  margin-top: 0.75rem;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-radius: 0.75rem 0.75rem 0 0;
+  background: $gray-900;
+
+  padding: 1rem 1.25rem 0.625rem 1rem;
+
+  & > .left {
+    display: flex;
+    column-gap: 1.25rem;
+    align-items: center;
+    width: 100%;
+  }
+
+  & > .right {
+    display: flex;
+    column-gap: 1rem;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+  }
+
+  &__add-button {
+    padding-inline: 3.375rem !important;
+    width: fit-content !important;
+  }
+
+  &__filter-button {
+    border-radius: 0.375rem;
+    background: $primary-700;
+    padding: 0.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  &__button {
+    display: flex;
+    column-gap: 0.375rem;
+    align-items: center;
+    border: 1px solid $gray-400;
+
+    border-radius: 0.375rem;
+    padding: 0.625rem 1rem;
+
+    span {
+      @include textSemibold14;
+
+      color: $gray-400;
+    }
+
+    svg {
+      flex-shrink: 0;
+      width: 1rem;
+      height: 1rem;
+    }
+  }
+
+  &__settings-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+      flex-shrink: 0;
+      width: 1.5rem;
+      height: 1.5rem;
+      fill: $gray-400;
+    }
+  }
+}
+
+.filter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-bottom: 1px solid $gray-800;
+  background: $gray-900;
+  padding: 0.625rem 1.25rem 1.25rem 1.25rem;
+
+  &__nav {
+    display: flex;
+    column-gap: 1.25rem;
+    align-items: center;
+
+    &-link {
+      @include textMedium14;
+
+      border-bottom: 1px solid $gray-900;
+      padding-bottom: 0.25rem;
+
+      color: $gray-100;
+
+      &.active-blue {
+        border-bottom: 1px solid $primary-600;
+        color: $primary-600;
+      }
+
+      &.active-green {
+        border-bottom: 1px solid $success-300;
+        color: $success-300;
+      }
+    }
+  }
+}
+
+.table-container {
+  background: $gray-900;
+}
+
+.table {
+  position: relative;
+  border-collapse: collapse;
+  width: 100%;
+
+  overflow-y: auto;
+
+  &__head {
+    border-bottom: 1px solid $gray-800;
+
+    &-th {
+      padding-block: 0.5rem;
+      padding-right: 1.5rem;
+
+      &:first-child {
+        padding-left: 1.25rem;
+      }
+
+      &:last-child {
+        padding-right: 1.25rem;
+      }
+    }
+
+    &-element {
+      display: flex;
+      column-gap: 0.625rem;
+      align-items: center;
+
+      cursor: pointer;
+      color: $gray-600;
+      user-select: none;
+
+      input {
+        width: 1rem;
+        height: 1rem;
+      }
+
+      p {
+        @include textMedium12;
+      }
+
+      span {
+        display: flex;
+
+        position: relative;
+        flex-flow: column;
+
+        svg {
+          position: absolute;
+          flex-shrink: 0;
+          width: 0.75rem;
+          height: 0.75rem;
+
+          &:first-child {
+            top: -0.625rem;
+          }
+
+          &:last-child {
+            top: -0.125rem;
+          }
+        }
+      }
+    }
+  }
+
+  &__body {
+    &-number {
+      display: flex;
+      flex-flow: column;
+      align-items: flex-start;
+
+      p {
+        color: $gray-100;
+        font-weight: 500;
+        font-size: 0.75rem;
+        line-height: 17px; /* 141.667% */
+        text-align: center;
+      }
+
+      div {
+        display: flex;
+        column-gap: 0.375rem;
+        align-items: center;
+        margin-top: 0.125rem;
+
+        span {
+          font-weight: 300;
+          font-size: 0.625rem;
+          line-height: normal;
+
+          &:nth-child(1) {
+            color: $success-300;
+          }
+
+          &:nth-child(2) {
+            color: $danger-600;
+          }
+        }
+      }
+    }
+
+    &-row {
+      border-bottom: 1px solid $gray-800;
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+
+    &-td {
+      padding-block: 1rem;
+      padding-right: 1.5rem;
+
+      &:first-child {
+        padding-left: 1.25rem;
+      }
+
+      &:last-child {
+        padding-right: 1.25rem;
+      }
+    }
+
+    &-options {
+      display: flex;
+      column-gap: 0.25rem;
+      align-items: flex-end;
+    }
+  }
+
+  &__information {
+    input {
+      width: 1rem;
+      height: 1rem;
+    }
+
+    &-product {
+      display: grid;
+      grid-template-columns: 2.5rem 1fr;
+      column-gap: 0.625rem;
+      align-items: center;
+
+      img {
+        grid-area: 1 / 1 / 3 / 2;
+
+        border-radius: 0.25rem;
+        width: 2.5rem;
+        height: 2.5rem;
+      }
+
+      &-name {
+        @include textSemibold14;
+        grid-area: 1 / 2 / 2 / 3;
+
+        color: $gray-100;
+      }
+
+      &-category {
+        @include textLight10;
+        grid-area: 2 / 2 / 3 / 3;
+
+        color: $gray-200;
+      }
+    }
+  }
+
+  &__text {
+    @include textMedium14;
+    color: $gray-100;
+  }
+
+  &__select {
+    display: flex;
+    column-gap: 0.5rem;
+    align-items: center;
+
+    &.archive {
+      div {
+        background: $yellow-400;
+      }
+
+      p,
+      select {
+        color: $yellow-400;
+      }
+    }
+
+    div {
+      margin-bottom: 0.125rem;
+      border-radius: 100px;
+      background: $success-300;
+      width: 0.625rem;
+      height: 0.625rem;
+    }
+
+    p {
+      color: $success-300;
+      @include textMedium12;
+    }
+
+    select {
+      appearance: none;
+
+      color: $success-300;
+      @include textMedium12;
+    }
+
+    svg {
+      flex-shrink: 0;
+
+      margin-bottom: 0.125rem;
+      width: 0.625rem;
+      height: 0.325rem;
+    }
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid $gray-800;
+  border-radius: 0 0 0.75rem 0.75rem;
+  background: $gray-900;
+  padding: 1.25rem;
+
+  &__title {
+    @include textMedium14;
+
+    color: $gray-100;
+  }
+
+  &__pagination {
+    display: flex;
+    column-gap: 0.625rem;
+    align-items: center;
+
+    button {
+      flex-shrink: 0;
+      width: 2rem;
+      height: 2rem;
+
+      svg {
+        flex-shrink: 0;
+        width: 1.25rem;
+        height: 1.25rem;
+      }
+
+      span {
+        @include textMedium14;
+        color: $gray-100;
+      }
+
+      &.active {
+        border-radius: 100px;
+        background: $primary-600;
+      }
+    }
+  }
+}

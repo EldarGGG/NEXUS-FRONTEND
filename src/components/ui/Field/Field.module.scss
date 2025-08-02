@@ -1,0 +1,84 @@
+@import '/src/assets/styles/index.scss';
+
+.field {
+  display: flex;
+
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0.75rem;
+  background: $gray-800;
+  padding: 0.75rem 1.5rem;
+  width: 100%;
+
+  &.password-shown {
+    button {
+      color: #fff;
+    }
+  }
+
+  input {
+    width: inherit;
+
+    color: $gray-100;
+    @include textRegular14;
+    outline: none;
+    border: none;
+
+    background: none;
+    font-family: inherit;
+
+    &::placeholder {
+      color: $gray-600;
+    }
+  }
+
+  button {
+    display: grid;
+    position: absolute;
+    top: 50%;
+    right: 1.5rem;
+    place-items: center;
+    transform: translateY(-50%);
+
+    transition: 200ms ease;
+
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background: none;
+    color: $gray-600;
+
+    svg {
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+  }
+
+  // FieldPhoto
+  label {
+    display: grid;
+    flex-shrink: 0;
+    place-items: center;
+
+    cursor: pointer;
+    border-radius: 0.375rem;
+    background: $gray-100;
+
+    padding: 0.5rem;
+
+    svg {
+      width: 1.125rem;
+      height: 1.125rem;
+    }
+
+    &.selected {
+      padding: 0;
+
+      img {
+        flex-shrink: 0;
+        border-radius: inherit;
+      }
+    }
+  }
+}

@@ -1,0 +1,65 @@
+@import '/src/assets/styles/index.scss';
+
+.main {
+  margin-top: 0.75rem;
+
+  display: grid;
+  grid-template-columns: 1fr 0.5fr;
+}
+
+.settings {
+  &-header {
+    padding: 1rem 1.25rem;
+
+    border-radius: 0.75rem 0.75rem 0 0;
+    background: $gray-900;
+    border-bottom: 1px solid $gray-800;
+
+    &__title {
+      color: $gray-100;
+      @include textSemibold16;
+    }
+  }
+
+  &-main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+
+    padding: 1.25rem;
+    padding-top: 0.625rem;
+
+    border-radius: 0 0 0.75rem 0.75rem;
+    background: $gray-900;
+
+    &__field,
+    &__select {
+      display: flex;
+      flex-flow: column;
+      row-gap: 0.75rem;
+
+      p {
+        color: $gray-100;
+        @include textMedium14;
+      }
+    }
+
+    &__select {
+      &-select {
+        width: 100% !important;
+
+        button {
+          border-radius: 0.75rem;
+        }
+      }
+    }
+  }
+
+  &-footer {
+    margin-top: 1.25rem;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1.25rem;
+  }
+}

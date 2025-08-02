@@ -1,0 +1,45 @@
+@import '/src/assets/styles/index.scss';
+
+.main {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  margin-top: 1rem;
+  margin-inline: auto;
+
+  &__title {
+    @include textSemibold52;
+
+    color: $gray-100;
+    text-align: center;
+
+    @include mobile {
+      font-size: 1.75rem;
+      line-height: 36px; /* 128.571% */
+    }
+  }
+
+  &__form {
+    display: flex;
+    row-gap: 1rem;
+    flex-flow: column;
+    align-items: center;
+    margin-top: 1.5rem;
+    width: 100%;
+    max-width: 25.75rem;
+
+    &-title {
+      @include textSemibold20;
+      color: $gray-100;
+
+      @include mobile {
+        font-size: 1.125rem;
+        line-height: 24px; /* 133.333% */
+      }
+    }
+
+    &-button {
+      margin-top: 0.5rem;
+    }
+  }
+}

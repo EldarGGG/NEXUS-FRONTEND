@@ -1,0 +1,58 @@
+@import '/src/assets/styles/index.scss';
+
+@mixin mobile() {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  column-gap: 0.625rem;
+  padding: 0.625rem;
+  // width: 16.25rem;
+
+  border-radius: 0.375rem;
+  background: var(--gray-800, #3b4758);
+
+  @include mobile() {
+    padding: 0.46875rem 0.625rem; /* 7.5px 10px */
+  }
+
+  input {
+    color: var(--gray-100, #eef0f4);
+    font-family: inherit;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 19px; /* 135.714% */
+
+    width: 100%;
+
+    // Reset
+    background: inherit;
+    outline: none;
+    border: none;
+
+    @include mobile() {
+      font-size: 0.75rem;
+      font-weight: 400;
+      line-height: 17px; /* 141.667% */
+    }
+
+    &::placeholder {
+      color: var(--gray-400, #bac4d1);
+    }
+  }
+
+  svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    flex-shrink: 0;
+
+    @include mobile() {
+      width: 1rem;
+      height: 1rem;
+    }
+  }
+}

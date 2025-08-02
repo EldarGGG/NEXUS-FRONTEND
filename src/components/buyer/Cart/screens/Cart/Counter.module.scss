@@ -1,0 +1,59 @@
+@import '/src/assets/styles/index.scss';
+
+.counter {
+  display: flex;
+  column-gap: 0.75rem;
+  align-items: center;
+
+  &__button {
+    display: grid;
+    place-items: center;
+
+    border: 1px solid $primary-700;
+    border-radius: 0.25rem;
+
+    width: 1.5rem;
+    height: 1.5rem;
+
+    &.trash {
+      border-color: $danger-600;
+
+      svg {
+        width: 0.875rem;
+        height: 0.875rem;
+
+        color: $danger-600;
+      }
+    }
+
+    svg {
+      flex-shrink: 0;
+      width: 0.5rem;
+      height: 0.5rem;
+
+      color: $gray-100;
+    }
+  }
+
+  &__count {
+    color: $gray-100;
+    font-weight: 500;
+    font-size: 0.75rem;
+    line-height: 17px; /* 141.667% */
+    max-width: 30px;
+    text-align: center;
+    // отключение стерлочек у инпута
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    // на мозиле
+    appearance: none;
+    -moz-appearance: textfield;
+  }
+  @media (max-width: 375px) {
+    font-size: 0.6rem;
+    
+  }
+}

@@ -1,0 +1,46 @@
+@import '/src/assets/styles/index.scss';
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+
+  &__space {
+    position: fixed;
+    inset: 0;
+
+    opacity: 0.8;
+    background: $gray-1000;
+  }
+
+  &__main {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-flow: column;
+
+    border-radius: 0.75rem;
+    background: $gray-900;
+
+    padding: 2rem;
+  }
+}
+
+.title {
+  @include textSemibold28;
+
+  color: $gray-100;
+  text-align: center;
+}
+
+.main {
+  margin-top: 1.5rem;
+
+  width: 25.75rem;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}

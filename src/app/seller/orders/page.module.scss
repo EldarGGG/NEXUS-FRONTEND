@@ -1,0 +1,454 @@
+@import '/src/assets/styles/index.scss';
+
+.main {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 5.5rem);
+  padding: 1.5rem;
+}
+
+.order-management {
+  height: 100%;
+  overflow: hidden;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    div {
+      &:last-child {
+        display: flex;
+
+        column-gap: 0.75rem;
+        align-items: center;
+      }
+    }
+  }
+
+  &__title {
+    @include textRegular12;
+    color: $gray-100;
+
+    text-align: center;
+  }
+
+  &__left {
+    display: flex;
+    column-gap: 1rem;
+    align-items: center;
+  }
+
+  &__grid-actions {
+    display: flex;
+    column-gap: 1rem;
+    align-items: center;
+  }
+
+  &__grid-button {
+    svg {
+      flex-shrink: 0;
+      width: 1rem;
+      height: 1rem;
+
+      color: $primary-600;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    column-gap: 1.25rem;
+    align-items: center;
+    margin-top: 0.5rem;
+
+    &-link {
+      @include textMedium12;
+      transition: 200ms ease;
+      border-bottom: 1px solid $gray-1000;
+
+      padding-bottom: 0.325rem;
+
+      color: $gray-100;
+
+      &.active {
+        border-bottom: 1px solid $primary-500;
+        color: $primary-500;
+      }
+    }
+  }
+
+  &__button {
+    display: flex;
+    column-gap: 0.75rem;
+    align-items: center;
+    border: 1px solid $primary-700;
+
+    border-radius: 0.75rem;
+    padding: 0.75rem 1.5rem;
+
+    svg {
+      width: 0.875rem;
+      height: 0.875rem;
+    }
+
+    span {
+      @include textSemibold14;
+      color: $gray-100;
+    }
+  }
+
+  &__filter {
+    display: grid;
+    place-items: center;
+
+    border-radius: 0.375rem;
+    background: $primary-700;
+    padding: 0.5rem 0.3125rem;
+    aspect-ratio: 1 / 1;
+
+    width: 2.5rem;
+    height: 2.5rem;
+
+    svg {
+      flex-shrink: 0;
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+
+  &__create-order {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%);
+    color: white;
+    border: none;
+    border-radius: 0.75rem;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+
+    svg {
+      width: 1rem;
+      height: 1rem;
+      stroke: white;
+    }
+  }
+
+  &__table {
+    margin-top: 0.75rem;
+    flex: 1;
+    border-radius: 0.75rem;
+    background: $gray-900;
+    overflow-y: auto;
+  }
+}
+
+.table {
+  position: relative;
+  border-collapse: collapse;
+  width: 100%;
+
+  &__head {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    border-bottom: 1px solid $gray-700;
+
+    border-radius: 0.75rem 0.75rem 0 0;
+    background: $gray-900;
+
+    &-th {
+      padding-block: 1rem;
+      padding-right: 1.5rem;
+
+      &:first-child {
+        padding-left: 1.25rem;
+      }
+
+      &:last-child {
+        padding-right: 1.25rem;
+      }
+    }
+
+    &-element {
+      display: flex;
+      column-gap: 0.625rem;
+      align-items: center;
+
+      cursor: pointer;
+      color: $gray-600;
+      user-select: none;
+
+      p {
+        @include textMedium12;
+      }
+
+      span {
+        display: flex;
+
+        position: relative;
+        flex-flow: column;
+
+        svg {
+          position: absolute;
+          flex-shrink: 0;
+          width: 0.75rem;
+          height: 0.75rem;
+
+          &:first-child {
+            top: -0.625rem;
+          }
+
+          &:last-child {
+            top: -0.125rem;
+          }
+        }
+      }
+    }
+  }
+
+  &__body {
+    &-row {
+      border-bottom: 1px solid $gray-700;
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+
+    &-td {
+      padding-block: 1rem;
+      padding-right: 1.5rem;
+      color: $gray-100;
+
+      &:first-child {
+        padding-left: 1.25rem;
+      }
+
+      &:last-child {
+        padding-right: 1.25rem;
+      }
+    }
+  }
+
+  &__information {
+    &.first {
+      display: grid;
+      grid-template-rows: repeat(2, 1fr);
+      grid-template-columns: 2.5rem 1fr;
+      column-gap: 0.375rem;
+      row-gap: 0.25rem;
+    }
+
+    &-photo {
+      position: relative;
+      grid-area: 1 / 1 / 3 / 2;
+      border-radius: 100px;
+
+      background: $gray-600;
+
+      width: 2.5rem;
+      height: 2.5rem;
+
+      & > .telegram {
+        position: absolute;
+        bottom: -0.25rem;
+        left: -0.25rem;
+      }
+    }
+
+    &-name {
+      @include textMedium12;
+
+      grid-area: 1 / 2 / 2 / 3;
+      color: $gray-100;
+    }
+
+    &-last-online {
+      @include textLight10;
+
+      grid-area: 2 / 2 / 3 / 3;
+      color: $gray-200;
+    }
+  }
+
+  &__text {
+    @include textMedium12;
+    color: $gray-100;
+  }
+
+  &__select {
+    display: flex;
+    column-gap: 0.5rem;
+    align-items: center;
+
+    div {
+      margin-bottom: 0.25rem;
+      border-radius: 100px;
+      background: $yellow-400;
+      width: 0.625rem;
+      height: 0.625rem;
+    }
+
+    p {
+      color: $yellow-400;
+      @include textMedium12;
+    }
+
+    svg {
+      flex-shrink: 0;
+
+      margin-bottom: 0.125rem;
+      width: 0.625rem;
+      height: 0.325rem;
+    }
+  }
+}
+
+.sales-overview {
+  height: 100%;
+  overflow: hidden;
+
+  @include mobile {
+    display: none;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-block: 0.59375rem; /* 9.5px */
+  }
+
+  &__title {
+    color: $gray-100;
+    @include textSemibold20;
+  }
+
+  &__nav {
+    display: flex;
+    column-gap: 1.25rem;
+    justify-content: space-between;
+    align-items: center;
+
+    &-link {
+      padding-bottom: 0.325rem;
+
+      color: $gray-100;
+      @include textMedium12;
+
+      transition: 200ms ease;
+      border-bottom: 1px solid $gray-1000;
+
+      &.active {
+        border-bottom: 1px solid $primary-500;
+        color: $primary-500;
+      }
+    }
+  }
+
+  &__main {
+    height: calc(100% - 2.75rem);
+    overflow-y: auto;
+  }
+}
+
+.chart {
+  margin-top: 0.75rem;
+
+  border-bottom: 1px solid $gray-700;
+
+  border-radius: 0.75rem 0.75rem 0 0;
+  background: $gray-900;
+  padding: 0.75rem 1rem;
+  padding-bottom: 1.25rem;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-block: 0.59375rem; /* 9.5px */
+  }
+
+  &__title {
+    color: $gray-100;
+    @include textSemibold16;
+  }
+
+  &__nav {
+    display: flex;
+    column-gap: 1.25rem;
+    justify-content: space-between;
+    align-items: center;
+
+    button {
+      display: grid;
+      place-items: center;
+      margin-bottom: 0.375rem;
+
+      svg {
+        flex-shrink: 0;
+        width: 1rem;
+        height: 1rem;
+      }
+    }
+
+    &-link {
+      @include textMedium12;
+      transition: 200ms ease;
+      border-bottom: 1px solid $gray-900;
+
+      padding-bottom: 0.325rem;
+
+      color: $gray-100;
+
+      &.active {
+        border-bottom: 1px solid $primary-500;
+        color: $primary-500;
+      }
+    }
+  }
+
+  &__main {
+    margin-top: 1rem;
+    width: 100%;
+
+    img {
+      width: 100%;
+      height: fit-content;
+      object-fit: contain;
+    }
+  }
+}
+
+.completed-sales {
+  border-radius: 0 0 0.75rem 0.75rem;
+  background: $gray-900;
+
+  &__title {
+    @include textSemibold16;
+
+    padding-top: 1.25rem;
+    padding-left: 1.25rem;
+
+    color: $gray-100;
+  }
+}

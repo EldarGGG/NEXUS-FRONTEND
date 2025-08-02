@@ -1,0 +1,120 @@
+@import '/src/assets/styles/index.scss';
+
+.main {
+  margin-top: 0.75rem;
+
+  display: grid;
+  grid-template-columns: 1fr 0.5fr;
+  gap: 1.25rem;
+}
+
+.technical {
+  &-header {
+    border-bottom: 1px solid $gray-800;
+    border-radius: 0.75rem 0.75rem 0 0;
+    background: $gray-900;
+
+    padding: 0.8125rem 1.25rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__title {
+      color: $gray-100;
+      @include textSemibold16;
+    }
+
+    &__image {
+      width: 1.75rem;
+      height: 1.75rem;
+      flex-shrink: 0;
+      border-radius: 100px;
+
+      background: #d9d9d9;
+    }
+  }
+
+  &-main {
+    border-radius: 0 0 0.75rem 0.75rem;
+    background: $gray-900;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+
+    padding: 1.25rem;
+    padding-top: 0.625rem;
+
+    &__field {
+      display: flex;
+      flex-flow: column;
+      row-gap: 0.75rem;
+
+      width: 100%;
+
+      p {
+        color: $gray-100;
+        @include textMedium14;
+      }
+
+      &-select {
+        width: 100% !important;
+
+        button {
+          width: 100%;
+          border-radius: 0.75rem;
+        }
+      }
+    }
+  }
+
+  &-footer {
+    margin-top: 1.25rem;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1.25rem;
+  }
+}
+
+.backup {
+  &-header {
+    padding: 1rem 1.25rem;
+
+    border-radius: 0.75rem 0.75rem 0 0;
+    background: $gray-900;
+    border-bottom: 1px solid $gray-800;
+
+    &__title {
+      color: $gray-100;
+      @include textSemibold16;
+    }
+  }
+
+  &-main {
+    border-radius: 0 0 0.75rem 0.75rem;
+    background: $gray-900;
+
+    padding: 0.75rem 1.25rem 1.25rem 1.25rem;
+
+    display: flex;
+    flex-flow: column;
+    row-gap: 0.75rem;
+
+    &__text {
+      color: $gray-500;
+      @include textMedium12;
+    }
+
+    &__date {
+      color: $gray-100;
+      @include textMedium12;
+    }
+
+    &__button {
+      margin-top: 0;
+      margin-bottom: auto;
+    }
+  }
+}
