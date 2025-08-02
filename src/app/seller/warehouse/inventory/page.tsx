@@ -178,7 +178,7 @@ export default function Inventory() {
                 <Button 
                   type="button" 
                   text="Отмена" 
-                  theme="outline" 
+                  theme="outline-blue" 
                   onClick={() => setShowAddModal(false)} 
                 />
               </div>
