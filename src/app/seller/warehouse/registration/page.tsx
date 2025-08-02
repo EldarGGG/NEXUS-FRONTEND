@@ -247,7 +247,7 @@ export default function StockRegistration() {
                 <Button 
                   type="button" 
                   text="Отмена" 
-                  theme="outline" 
+                  theme="outline-blue" 
                   onClick={() => setShowAddModal(false)} 
                 />
               </div>
