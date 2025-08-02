@@ -229,7 +229,7 @@ const TasksPage: React.FC = () => {
   const handleDrop = async (e: React.DragEvent, newStatus: string) => {
     e.preventDefault();
     
-    let taskData;
+    let taskData: any;
     try {
       const dragData = e.dataTransfer.getData('text/plain');
       if (!dragData) {
