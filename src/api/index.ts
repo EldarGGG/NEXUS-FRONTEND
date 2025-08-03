@@ -4,10 +4,10 @@ import axios from 'axios';
 const getApiBaseUrl = () => {
   if (typeof window !== 'undefined') {
     // Client-side
-    return process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:8000';
+    return process.env.NEXT_PUBLIC_API_BASE_URL || 'https://nexus-backend-z66y.onrender.com';
   } else {
     // Server-side
-    return process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:8000';
+    return process.env.NEXT_PUBLIC_API_BASE_URL || 'https://nexus-backend-z66y.onrender.com';
   }
 };
 

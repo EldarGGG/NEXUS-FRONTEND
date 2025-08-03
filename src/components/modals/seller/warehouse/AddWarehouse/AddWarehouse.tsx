@@ -50,7 +50,7 @@ export function AddWarehouseModal({ onClose, onSuccess }: AddWarehouseProps) {
         address: formData.address
       };
 
-      const response = await fetch('http://localhost:8000/api/v1/warehouses/', {
+      const response = await fetch('https://nexus-backend-z66y.onrender.com/api/v1/warehouses/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

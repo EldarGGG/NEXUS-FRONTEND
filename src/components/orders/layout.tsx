@@ -28,7 +28,7 @@ import { Field } from '../buyer/Field';
 import { CartModal } from '../buyer/Cart';
 import { useSelector } from '@/hooks/useSelector';
 
-let URL = 'http://127.0.0.1:8000/api/v1';
+let URL = 'https://nexus-backend-z66y.onrender.com/api/v1';
 const key =
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyLCJ1c2VyIjp7ImVtYWlsIjoickByLmNvbSIsInBob25lIjoiNzc3NzUxODc1MDEiLCJpZCI6IjEifX0.9l-B_e4JNSa8IKDren_e11ONeUVCkY33kyhSaplOjaM';
 

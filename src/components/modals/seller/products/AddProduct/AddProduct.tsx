@@ -45,7 +45,7 @@ export function AddProductModal({ onClose }: AddProductProps) {
     const fetchWarehouses = async () => {
       try {
         const token = typeof window !== 'undefined' ? localStorage.getItem('access_token') : null;
-        const response = await fetch('http://localhost:8000/api/v1/warehouses/', {
+        const response = await fetch('https://nexus-backend-z66y.onrender.com/api/v1/warehouses/', {
           headers: {
             ...(token && { 'Authorization': `Bearer ${token}` })
           }
@@ -94,7 +94,7 @@ export function AddProductModal({ onClose }: AddProductProps) {
         quantity: parseInt(formData.quantity)
       };
 
-      const response = await fetch('http://localhost:8000/api/v1/seller/products/', {
+      const response = await fetch('https://nexus-backend-z66y.onrender.com/api/v1/seller/products/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

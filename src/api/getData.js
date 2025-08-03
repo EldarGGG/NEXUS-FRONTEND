@@ -1,5 +1,5 @@
 import axios from 'axios';
-const baseURL = 'http://localhost:8000/';
+const baseURL = 'https://nexus-backend-z66y.onrender.com/';
 
 // Get JWT authentication token from localStorage
 function getAuthToken() {

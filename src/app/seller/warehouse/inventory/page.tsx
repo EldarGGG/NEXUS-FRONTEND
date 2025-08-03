@@ -58,7 +58,7 @@ export default function Inventory() {
         return;
       }
 
-      const response = await fetch('http://localhost:8000/api/v1/seller/inventory/checks/', {
+      const response = await fetch('https://nexus-backend-z66y.onrender.com/api/v1/seller/inventory/checks/', {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json',
@@ -99,7 +99,7 @@ export default function Inventory() {
       const token = typeof window !== 'undefined' ? localStorage.getItem('access_token') : null;
       if (!token) return;
 
-      const response = await fetch('http://localhost:8000/api/v1/seller/inventory/checks/', {
+      const response = await fetch('https://nexus-backend-z66y.onrender.com/api/v1/seller/inventory/checks/', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,

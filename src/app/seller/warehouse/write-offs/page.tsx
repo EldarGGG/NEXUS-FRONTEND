@@ -70,7 +70,7 @@ export default function WriteOffs() {
         return;
       }
 
-      const response = await fetch('http://localhost:8000/api/v1/seller/inventory/write-offs/', {
+      const response = await fetch('https://nexus-backend-z66y.onrender.com/api/v1/seller/inventory/write-offs/', {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json',
@@ -95,7 +95,7 @@ export default function WriteOffs() {
       const token = typeof window !== 'undefined' ? localStorage.getItem('access_token') : null;
       if (!token) return;
 
-      const response = await fetch('http://localhost:8000/api/v1/seller/products/', {
+      const response = await fetch('https://nexus-backend-z66y.onrender.com/api/v1/seller/products/', {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json',
@@ -132,7 +132,7 @@ export default function WriteOffs() {
       const token = typeof window !== 'undefined' ? localStorage.getItem('access_token') : null;
       if (!token) return;
 
-      const response = await fetch('http://localhost:8000/api/v1/seller/inventory/write-offs/', {
+      const response = await fetch('https://nexus-backend-z66y.onrender.com/api/v1/seller/inventory/write-offs/', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,

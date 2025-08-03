@@ -71,7 +71,7 @@ export default function StockRegistration() {
         return;
       }
 
-      const response = await fetch('http://localhost:8000/api/v1/seller/inventory/registration/', {
+      const response = await fetch('https://nexus-backend-z66y.onrender.com/api/v1/seller/inventory/registration/', {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json',
@@ -96,7 +96,7 @@ export default function StockRegistration() {
       const token = typeof window !== 'undefined' ? localStorage.getItem('access_token') : null;
       if (!token) return;
 
-      const response = await fetch('http://localhost:8000/api/v1/seller/products/', {
+      const response = await fetch('https://nexus-backend-z66y.onrender.com/api/v1/seller/products/', {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json',
@@ -133,7 +133,7 @@ export default function StockRegistration() {
       const token = typeof window !== 'undefined' ? localStorage.getItem('access_token') : null;
       if (!token) return;
 
-      const response = await fetch('http://localhost:8000/api/v1/seller/inventory/registration/', {
+      const response = await fetch('https://nexus-backend-z66y.onrender.com/api/v1/seller/inventory/registration/', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,

@@ -50,7 +50,7 @@ export default function Storages() {
         return;
       }
 
-      const response = await fetch('http://localhost:8000/api/v1/warehouses/', {
+      const response = await fetch('https://nexus-backend-z66y.onrender.com/api/v1/warehouses/', {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json',
@@ -125,7 +125,7 @@ export default function Storages() {
         return;
       }
 
-      const response = await fetch(`http://localhost:8000/api/v1/warehouses/${id}/`, {
+      const response = await fetch(`https://nexus-backend-z66y.onrender.com/api/v1/warehouses/${id}/`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`,
