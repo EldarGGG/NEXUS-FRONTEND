@@ -44,7 +44,7 @@ export default function Signup() {
       
       console.log('Sending signup data:', apiData);
 
-      const response = await fetch('http://localhost:8000/auth/signup/', {
+      const response = await fetch('https://nexus-backend-z66y.onrender.com/auth/signup/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -47,7 +47,7 @@ export default function WriteDowns() {
         return;
       }
 
-      const response = await fetch('http://localhost:8000/api/v1/seller/inventory/write-offs/', {
+      const response = await fetch('https://nexus-backend-z66y.onrender.com/api/v1/seller/inventory/write-offs/', {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json',

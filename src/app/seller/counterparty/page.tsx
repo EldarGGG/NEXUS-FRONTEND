@@ -60,7 +60,7 @@ export default function Counterparties() {
       setLoading(true);
       const token = typeof window !== 'undefined' ? localStorage.getItem('access_token') : null;
       
-      const response = await fetch('http://localhost:8000/api/v1/seller/counterparties/', {
+      const response = await fetch('https://nexus-backend-z66y.onrender.com/api/v1/seller/counterparties/', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',

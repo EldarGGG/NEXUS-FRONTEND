@@ -10,7 +10,7 @@ const nextConfig = {
   
   // Image optimization
   images: {
-    domains: ['localhost', 'railway.app'],
+    domains: ['railway.app'],
     unoptimized: true,
   },
   

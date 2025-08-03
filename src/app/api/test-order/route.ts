@@ -9,7 +9,7 @@ export async function POST(request: NextRequest) {
     const authorization = request.headers.get('authorization');
     
     // Forward the request to the actual backend
-    const response = await fetch('http://localhost:8000/api/v1/orders/create/', {
+    const response = await fetch('https://nexus-backend-z66y.onrender.com/api/v1/orders/create/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

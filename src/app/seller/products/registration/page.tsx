@@ -47,7 +47,7 @@ export default function Registration() {
         return;
       }
 
-      const response = await fetch('http://localhost:8000/api/v1/seller/inventory/registration/', {
+      const response = await fetch('https://nexus-backend-z66y.onrender.com/api/v1/seller/inventory/registration/', {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json',

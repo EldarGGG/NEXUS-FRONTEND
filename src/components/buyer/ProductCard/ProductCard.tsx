@@ -414,7 +414,7 @@ export function ProductCard({ product }: ProductCardProps) {
 
 // import Link from 'next/link';
 
-// let URL = 'http://127.0.0.1:8000/api/v1';
+// let URL = 'https://nexus-backend-z66y.onrender.com/api/v1';
 // const key =
 //   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyLCJ1c2VyIjp7ImVtYWlsIjoickByLmNvbSIsInBob25lIjoiNzc3NzUxODc1MDEiLCJpZCI6IjEifX0.9l-B_e4JNSa8IKDren_e11ONeUVCkY33kyhSaplOjaM';
 
@@ -608,7 +608,7 @@ export function ProductCard({ product }: ProductCardProps) {
 
 // export function ProductCard({ product }: ProductCardProps) {
 //   const productInBasket = useSelector((state) => state.buyerCart.find((x) => x.id == product.id));
-//   const img = 'http://127.0.0.1:8000/media/images/noimage.png';
+//   const img = 'https://nexus-backend-z66y.onrender.com/media/images/noimage.png';
 
 //   const [counter, setCounter] = useState<number>(
 //     productInBasket?.count ? productInBasket?.count : product.count,
